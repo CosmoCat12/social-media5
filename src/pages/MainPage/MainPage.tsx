@@ -1,10 +1,10 @@
 import "./MainPage.scss";
 import NavBar from "../../components/NavBar/NavBar";
 import List from "../../components/List/List";
-import WhatsNew from "../../components/WhatsNew/WhatsNew";
-import History from "../../components/History/History";
-import Post from "../../components/Post/Post";
-import Repost from "../../components/Repost/Repost";
+// import WhatsNew from "../../components/WhatsNew/WhatsNew";
+// import History from "../../components/History/History";
+// import Post from "../../components/Post/Post";
+// import Repost from "../../components/Repost/Repost";
 export const MainPage = () => {
   return (
     <div className="MainPage">
@@ -13,10 +13,10 @@ export const MainPage = () => {
         <List listType="subscribes"/>
       </aside>
       <main className="Main">
-        <WhatsNew />
+        {/* <WhatsNew />
         <History />
         <Post />
-        <Repost />
+        <Repost /> */}
       </main>
       <aside className="RightSide">
         <List listType="closeFriends"/>
@@ -25,7 +25,8 @@ export const MainPage = () => {
             <h2>Вы недавно слушали</h2>
             <span>123</span>
           </div>
-          <div className="MusicElem">
+          <List listType="music"/>
+          {/* <div className="MusicElem">
             <img src="./img/music/album-1.png" alt="Album" />
             <div className="music__description">
               <p className="main__text">Pieces</p>
@@ -72,7 +73,7 @@ export const MainPage = () => {
               <p className="secondary__text">Glass Animals</p>
             </div>
             <div className="plus-button"></div>
-          </div>
+          </div> */}
         </div>
       </aside>
     </div>

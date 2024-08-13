@@ -15,7 +15,7 @@ const List = ({ listType}: ListProps) => {
       return (
         <div className="List">
           <div className="List__title">
-            <Heading variant="h2" text="Подписки" />
+            <Heading variant="h2" text="Близкие друзья" />
             <span className="count">{closeFriends ? closeFriends.length : ""}</span>
           </div>
           {closeFriends &&
@@ -31,19 +31,34 @@ const List = ({ listType}: ListProps) => {
             ))}
         </div>
       );
-    // case "music" :
-    // return(
-
-    // )
+    case "music" :
+    return(
+      <div className="List">
+          <div className="List__title">
+            <Heading variant="h2" text="Музыка" />
+            <span className="count">{subscribes ? subscribes.length : ""}</span>
+          </div>
+          {subscribes &&
+            subscribes.map((userElem) => (
+              <ListItem
+                imgUrl={userElem.imgUrl}
+                alt={userElem.alt}
+                badgeNumber={userElem.badgeNumber}
+                mainText={userElem.mainText}
+                secondaryText={userElem.secondaryText}
+              />
+            ))}
+        </div>
+    )
     case "closeFriends":
       return (
         <div className="List">
           <div className="List__title">
             <Heading variant="h2" text="Подписки" />
-            <span className="count">{subscribes ? subscribes.length : ""}</span>
+            <span className="count">{music ? music.length : ""}</span>
           </div>
-          {subscribes &&
-            subscribes.map((userElem) => (
+          {music &&
+            music.map((userElem) => (
               <ListItem
                 imgUrl={userElem.imgUrl}
                 alt={userElem.alt}
